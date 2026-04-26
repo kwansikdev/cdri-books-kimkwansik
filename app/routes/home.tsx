@@ -24,14 +24,18 @@ export default function Home() {
     page: parseInt(searchParams.get("page") || "1"),
   } as SearchBookRequestType;
 
-  const { data } = Services.Search.hooks.useFetchSearchBook(searchQuery, {
-    queryOptions: {
-      enabled: searchQuery.query !== "",
+  const { data, isLoading } = Services.Search.hooks.useFetchSearchBook(
+    searchQuery,
+    {
+      queryOptions: {
+        enabled: searchQuery.query !== "",
+      },
     },
-  });
+  );
 
   const emptyResult =
-    data?.data.meta.total_count === 0 || !data?.data.meta.total_count;
+    !isLoading &&
+    (data?.data.meta.total_count === 0 || !data?.data.meta.total_count);
 
   // 페이지네이션 관련 계산
   const currentPage = searchQuery.page || 1;
