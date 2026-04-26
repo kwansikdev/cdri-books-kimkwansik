@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Noto Sans Korean";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/fonts/NotoSans-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Noto Sans Korean";
+  font-weight: 500;
+  font-style: normal;
+  src: url("/fonts/NotoSans-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Noto Sans Korean";
+  font-weight: 300;
+  font-style: normal;
+  src: url("/fonts/NotoSans-Light.woff2") format("woff2");
+}
